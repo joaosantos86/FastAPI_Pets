@@ -1,0 +1,26 @@
+# Ambiente virtual Python
+.venv/
+
+# Configurações locais (senhas não vão para o repositório)
+.env
+
+# Arquivos temporários do Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Build e distribuição
+build/
+dist/
+*.egg-info/
+
+# Ferramentas e testes
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Sistema operacional e editor
+.DS_Store
+Thumbs.db
+*.log
