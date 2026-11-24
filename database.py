@@ -1,4 +1,5 @@
 import os
+from contextlib import closing
 from pathlib import Path
 
 import mysql.connector
@@ -19,3 +20,10 @@ def ler_configuracao():
 
 def criar_conexao():
     return mysql.connector.connect(**ler_configuracao())
+
+
+def executar_sql(sql, parametros=()):
+    with closing(criar_conexao()) as conexao:
+        with closing(conexao.cursor(dictionary=True)) as cursor:
+            cursor.execute(sql, parametros)
+            return cursor.fetchall()
